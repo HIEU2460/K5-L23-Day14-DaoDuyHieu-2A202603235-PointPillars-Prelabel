@@ -4,8 +4,9 @@
 - `seed_tag` trong `frames_A.txt`: `393590736f`
 
 ## 1. Dự đoán trước sweep (bước 5b)
-- Tham số tôi nghĩ giảm công sửa nhiều nhất: **[TỰ ĐIỀN TRƯỚC SWEEP]**
-- Vì sao (dựa trên ảnh BEV tập A và quan sát box thừa/box sót): **[TỰ ĐIỀN TRƯỚC SWEEP]**
+
+- Tham số tôi nghĩ giảm công sửa nhiều nhất: tăng `score_thr` lên `0.4` và đặt `min_points=5`.
+- Vì sao: ở cấu hình gốc, ba frame tập A có tới 78 box thừa nhưng chỉ có 4 box bị sót. Tôi đoán việc tăng ngưỡng tin cậy và loại các box chứa quá ít điểm LiDAR sẽ giảm đáng kể số box thừa, qua đó giảm công xóa. Cấu hình lọc có thể làm tăng số box bị sót, vốn tốn công thêm hơn, nhưng với chênh lệch hiện tại giữa 78 box thừa và 4 box sót, tôi kỳ vọng chi phí sửa vẫn giảm.
 
 ## 2. Tập A: sửa tay và tune
 
